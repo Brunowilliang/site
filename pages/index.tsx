@@ -109,19 +109,19 @@ export default function Home() {
             Techs que uso no dia a dia
           </Text>
           <HStack spacing={isMobile ? 3 : 5}>
-            <Image src="/techs/react.png" alt="React" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
-            <Image src="/techs/javascript.png" alt="Javascript" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
-            <Image src="/techs/typescript.png" alt="typescript" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
-            <Image src="/techs/nextjs.png" alt="Nextjs" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
-            <Image src="/techs/github.png" alt="Github" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
-            <Image src="/techs/expo.png" alt="Expo" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
-            <Image src="/techs/supabase.png" alt="Supabase" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
+            <Image src="/stack/react.png" alt="React" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
+            <Image src="/stack/javascript.png" alt="Javascript" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
+            <Image src="/stack/typescript.png" alt="typescript" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
+            <Image src="/stack/nextjs.png" alt="Nextjs" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
+            <Image src="/stack/github.png" alt="Github" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
+            <Image src="/stack/expo.png" alt="Expo" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
+            <Image src="/stack/supabase.png" alt="Supabase" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
           </HStack>
           <HStack spacing={isMobile ? 3 : 5}>
-            <Image src="/techs/tailwindcss.png" alt="TailwindCSS" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
-            <Image src="/techs/figma.png" alt="Figma" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
-            <Image src="/techs/illustrator.png" alt="Illustrator" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
-            <Image src="/techs/photoshop.png" alt="Photoshop" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
+            <Image src="/stack/tailwindcss.png" alt="TailwindCSS" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
+            <Image src="/stack/figma.png" alt="Figma" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
+            <Image src="/stack/illustrator.png" alt="Illustrator" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
+            <Image src="/stack/photoshop.png" alt="Photoshop" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
           </HStack>
         </VStack>
       </Center>
