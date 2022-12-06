@@ -1,9 +1,17 @@
-import { Badge, Box, Button, Center, HStack, IconButton, Text, VStack } from '@chakra-ui/react'
+import { Badge, Box, Button, Center, color, HStack, IconButton, Text, VStack } from '@chakra-ui/react'
 import { FaWhatsapp, FaLinkedin, FaFigma, FaGithub } from 'react-icons/fa'
 import { BsDownload } from 'react-icons/bs'
 import { useMediaQuery } from '@chakra-ui/react'
 import Image from 'next/image'
 import Head from 'next/head'
+import { SnapList, SnapItem, useVisibleElements, useScroll, useDragToScroll, isTouchDevice,} from 'react-snaplist-carousel';
+import { useRef } from 'react'
+
+const MyItem = ({ children }: any) => (
+  <div style={{ width: '35vw', height: 200, backgroundColor: '#F00' }}>
+    {children}
+  </div>
+);
 
 export default function Home() {
   const year = new Date().getFullYear()
@@ -12,6 +20,9 @@ export default function Home() {
   const linkedin = () => { window.open('https://www.linkedin.com/in/brunowilliang/', '_blank') }
   const github = () => { window.open('https://github.com/brunowilliang', '_blank') }
   const figma = () => { window.open('https://www.figma.com/@brunowilliang', '_blank') }
+
+  const snapList = useRef(null);
+  const { isDragging } = useDragToScroll({ ref: snapList });
 
 
   const openWhatsapp = () => {
@@ -125,6 +136,36 @@ export default function Home() {
           </HStack>
         </VStack>
       </Center>
+      
+      {/* <Box mx='auto' maxW='1000px' mb="120px">
+        <SnapList ref={snapList} direction="horizontal">
+          <SnapItem margin={{ left: '20vw', right: '10px' }} snapAlign="start">
+            <MyItem>
+              Item 0
+            </MyItem>
+          </SnapItem>
+          <SnapItem margin={{ left: '10px', right: '10px' }} snapAlign="center">
+            <MyItem>
+              Item 1
+            </MyItem>
+          </SnapItem>
+          <SnapItem margin={{ left: '10px', right: '10px' }} snapAlign="center">
+            <MyItem>
+              Item 2
+            </MyItem>
+          </SnapItem>
+          <SnapItem margin={{ left: '10px', right: '10px' }} snapAlign="center">
+            <MyItem>
+              Item 3
+            </MyItem>
+          </SnapItem>
+          <SnapItem margin={{ left: '10px', right: '20vw' }} snapAlign="end">
+            <MyItem>
+              Item 4
+            </MyItem>
+          </SnapItem>
+        </SnapList>
+      </Box> */}
 
       <Center h="30px" mx='auto' maxW={1000}>
         <Text fontSize="20px" textAlign="center" lineHeight="shorter" color="gray">
