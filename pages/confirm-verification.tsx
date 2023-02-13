@@ -11,7 +11,7 @@ function PasswordReset() {
       <Text color={'white'} fontSize="2xl" fontWeight="bold" mb={4}>
         Conta verificada com sucesso!
       </Text>
-      <Button onClick={() => window.location.href = '/login'} width={'full'} size="lg" type="submit" colorScheme="blue" mt={4}>
+      <Button onClick={() => window.location.href = '/'}  size="lg" type="submit" colorScheme="blue" mt={4}>
         Voltar
       </Button>
     </Center>
