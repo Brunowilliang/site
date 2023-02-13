@@ -5,6 +5,7 @@ import { Box, Button, Center, Input, Text } from "@chakra-ui/react";
 import { api } from "../services/pocketbase";
 
 function PasswordReset() {
+  const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [token, setToken] = useState('');
@@ -15,7 +16,8 @@ function PasswordReset() {
   }, []);
 
 
-  const handleResetPassword = async (e: any) => { 
+  const handleResetPasswordUser = async (e: any) => {
+    setLoading(true);
     e.preventDefault();
 
     if (password !== confirmPassword) {
@@ -33,6 +35,32 @@ function PasswordReset() {
     }).catch((err) => {
       console.log(err);
       toast.error('Não foi possível alterar a senha');
+    }).finally(() => {
+      setLoading(false);
+    });
+  }
+
+  const handleResetPasswordCompany = async (e: any) => {
+    setLoading(true);
+    e.preventDefault();
+
+    if (password !== confirmPassword) {
+      toast.error('As senhas não conferem');
+      return;
+    }
+
+    await api.collection('company').confirmPasswordReset(
+      token,
+      password,
+      password,
+    ).then((res) => {
+      console.log(res);
+      toast.success('Senha alterada com sucesso');
+    }).catch((err) => {
+      console.log(err);
+      toast.error('Não foi possível alterar a senha');
+    }).finally(() => {
+      setLoading(false);
     });
   }
 
@@ -49,11 +77,14 @@ function PasswordReset() {
         </Box>
       )}
       {token && (
-        <form onSubmit={(e) => handleResetPassword(e)} style={{ width: '300px' }}>
+        <form style={{ width: '300px' }}>
           <Input color={"white"} size="lg" mb={2} required value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Senha' />
           <Input color={"white"} size="lg" required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder='Confirmar senha' />
-          <Button width={'full'} size="lg" type="submit" colorScheme="blue" mt={4}>
-            Alterar senha
+          <Button onClick={(e) => handleResetPasswordUser(e)} width={'full'} size="lg" type="submit" colorScheme="blue" mt={4}>
+            Alterar senha usuário
+          </Button>
+          <Button onClick={(e) => handleResetPasswordCompany(e)} width={'full'} size="lg" type="submit" colorScheme="blue" mt={4}>
+            Alterar senha empresa
           </Button>
         </form>
       )}
