@@ -1,56 +1,56 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Box, Text, Stack, UnorderedList, ListItem } from '@chakra-ui/react'
+import { Box, Text, Stack, UnorderedList, ListItem, Button } from '@chakra-ui/react'
 import Image from 'next/image'
+import { BsWhatsapp } from 'react-icons/bs'
 
 const Truco: NextPage = () => {
   return (
+    <>
     <Box mx="auto" maxWidth="800px">
       <Head>
-        <title>Contador de truco</title>
+        <title>Reserves</title>
         <meta name="description" content="Aplicativo para AppStore e GooglePlay" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Stack spacing={16} mx={5} maxWidth="800px" alignItems="center" my={16}>
+      <Stack spacing={16} mx={5} maxWidth="800px" alignItems="center" mt={40}>
         <Image
           src="/logoReserves.png"
           alt="Reserves app"
           width={200}
           height={200}
         />
-        <Stack spacing={8} alignItems="start">
-          <Text fontSize='2xl' fontWeight="bold" textAlign="start" color="gray.300">Política de privacidade</Text>
-          <Text fontWeight="medium" color="gray.500">
-            A privacidade e segurança de dados dos nossos usuários são extremamente importantes para nós. Por isso, esta política de privacidade estabelece como coletamos, utilizamos, protegemos e divulgamos as informações dos nossos usuários.
+        <Stack spacing={8} alignItems="start" fontWeight="medium" color="gray.500">
+          <Text>
+            Bem-vindo à Reserves, a revolução no mundo dos agendamentos. Nossa plataforma é projetada para tornar o processo de agendamento mais fácil, rápido e eficiente. Com a Reserves, você pode agendar seus compromissos com poucos cliques, a qualquer momento e de qualquer lugar.
           </Text>
-          <Text fontWeight="medium" color="gray.500" my={2}>
-            Ao utilizar nosso site ou serviços, você concorda com esta política de privacidade e com o processamento de suas informações pessoais conforme descrito aqui. Caso você não concorde com esta política, por favor, não utilize nossos serviços.
+          <Text>
+            Não perca mais tempo com filas intermináveis ou ligações frustrantes. A Reserves oferece uma solução simples e intuitiva, permitindo que você escolha o local, data, hora e profissional de sua preferência. Além disso, você pode receber lembretes por WhatsApp e ter acesso a todas as informações importantes sobre seus compromissos em um só lugar.
           </Text>
-          <Text fontWeight="medium" color="gray.500" my={2}>
-            Coletamos informações como nome, endereço de e-mail, entre outras. Essas informações são utilizadas para oferecer nossos serviços e melhorá-los constantemente.
+          <Text>
+            Mas não para por aí! Com a Reserves, você também pode expandir sua equipe e oferecer mais serviços a seus clientes. Cadastre profissionais e serviços de maneira fácil e rápida e acompanhe o desempenho de cada um com nossos relatórios detalhados. Além disso, nossos dashboards oferecem informações sobre seus agendamentos, permitindo que você mantenha sua vida organizada e tome decisões informadas.
           </Text>
-          <Text fontWeight="medium" color="gray.500" my={2}>
-            Não compartilhamos informações pessoais com terceiros, exceto quando necessário para cumprir obrigações legais ou para proteger nossos direitos ou de terceiros.
-          </Text>
-          <Text fontWeight="medium" color="gray.500" my={2}>
-            Nosso site utiliza cookies e outras tecnologias de rastreamento para melhorar a experiência do usuário e coletar informações como o tipo de navegador e dispositivo utilizado, o tempo de acesso, entre outros.
-          </Text>
-          <Text fontWeight="medium" color="gray.500" my={2}>
-            As informações coletadas são armazenadas em servidores seguros e protegidas por medidas de segurança adequadas. Também temos procedimentos internos para proteger essas informações e garantir o acesso somente a pessoas autorizadas.
-          </Text>
-          <Text fontWeight="medium" color="gray.500" my={2}>
-            Nos reservamos o direito de modificar esta política de privacidade a qualquer momento, publicando a versão atualizada em nosso site. Por isso, recomendamos que você verifique esta política regularmente.
-          </Text>
-          <Text fontWeight="medium" color="gray.500" my={2}>
-            Se tiver alguma dúvida ou preocupação sobre nossa política de privacidade, entre em contato conosco.
+          <Text>
+            Não perca mais tempo com agendamentos tradicionais e experimente a Reserves hoje mesmo. Juntos, vamos revolucionar o seu jeito de realizar agendamentos e transformar sua vida em algo ainda mais fácil e conveniente.
           </Text>
         </Stack>
       </Stack>
-      <Box borderTop="1px solid" borderColor="gray.700" mx={5} textAlign="center" fontWeight="medium" color="gray.300">
+      <Box borderTop="1px solid" borderColor="gray.700" mx={5} mt={40} textAlign="center" fontWeight="medium" color="gray.500">
           <Text my={5}>Developed by Bruno Garcia 💙</Text>
       </Box>
     </Box>
+    <Button
+      position="fixed"
+      bottom={20}
+      right={10}
+      leftIcon={<BsWhatsapp size={20} />}
+      colorScheme='whatsapp'
+      onClick={() => window.open('https://api.whatsapp.com/send?phone=5518981947070&text=Olá, gostaria de solicitar suporte da equipe reserves.', '_blank')}
+    >
+      Precisa de ajuda?
+    </Button>
+    </>
   )
 }
 
