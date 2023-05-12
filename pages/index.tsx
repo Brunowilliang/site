@@ -1,11 +1,10 @@
-import { Badge, Box, Button, Center, color, HStack, IconButton, Text, VStack } from '@chakra-ui/react'
-import { FaWhatsapp, FaLinkedin, FaFigma, FaGithub } from 'react-icons/fa'
-import { BsDownload } from 'react-icons/bs'
-import { useMediaQuery } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Badge, Box, Button, Center, HStack, IconButton, Text, useMediaQuery, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
-import { SnapList, SnapItem, useVisibleElements, useScroll, useDragToScroll, isTouchDevice,} from 'react-snaplist-carousel';
+import Image from 'next/image'
 import { useRef } from 'react'
+import { BsDownload } from 'react-icons/bs'
+import { FaFigma, FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import { useDragToScroll } from 'react-snaplist-carousel'
 
 const MyItem = ({ children }: any) => (
   <div style={{ width: '35vw', height: 200, backgroundColor: '#F00' }}>
@@ -15,7 +14,7 @@ const MyItem = ({ children }: any) => (
 
 export default function Home() {
   const year = new Date().getFullYear()
-  const [ isMobile ] = useMediaQuery("(max-width: 768px)")
+  const [isMobile] = useMediaQuery("(max-width: 768px)")
 
   const linkedin = () => { window.open('https://www.linkedin.com/in/brunowilliang/', '_blank') }
   const github = () => { window.open('https://github.com/brunowilliang', '_blank') }
@@ -54,32 +53,32 @@ export default function Home() {
               <Image src="/bruno.png" alt="Bruno Willian Garcia" width={330} height={330} />
             </Box>
             <Badge px={3} py={2} fontSize="md" color="primary" bg="primaryOpacity" borderRadius={"10px"}>
-              👋 Saudações!
+              👋 GREETINGS!
             </Badge>
             <Text fontSize="43px" fontWeight="bold" textAlign={['center', 'center', 'left']} lineHeight="shorter" color="white">
-              Hi, I’am<br/>Bruno Garcia
+              Hi, I’am<br />Bruno Garcia
             </Text>
             <Text fontSize="25px" textAlign={['center', 'center', 'right']} lineHeight="shorter" color="grey">
-              Desenvolvedor web,<br/>
-              Desenvolvedor mobile<br/>
-              e UX/UI Designer.
+              Web developer,<br />
+              Mobile developer,<br />
+              and UX/UI designer.
             </Text>
-            <Button bg="primaryOpacity" color='primary' _hover={{bg: 'primaryOpacity'}} _active={{bg: 'primaryOpacityPlus'}} size='lg' rightIcon={<FaWhatsapp size={20} color="#2666DE" />} onClick={openWhatsapp}>
-              Vamos conversar?
+            <Button bg="primaryOpacity" color='primary' _hover={{ bg: 'primaryOpacity' }} _active={{ bg: 'primaryOpacityPlus' }} size='lg' rightIcon={<FaWhatsapp size={20} color="#2666DE" />} onClick={openWhatsapp}>
+              Let’s talk?
             </Button>
-            <Button bg="primaryOpacity" color='primary' _hover={{bg: 'primaryOpacity'}} _active={{bg: 'primaryOpacityPlus'}} size='lg' rightIcon={<BsDownload size={20} color="#2666DE" />} onClick={donwloadResume}>
-              Baixar CV
+            <Button bg="primaryOpacity" color='primary' _hover={{ bg: 'primaryOpacity' }} _active={{ bg: 'primaryOpacityPlus' }} size='lg' rightIcon={<BsDownload size={20} color="#2666DE" />} onClick={donwloadResume}>
+              Download CV
             </Button>
           </VStack>
-      </Box>
+        </Box>
       ) : (
         <Box display='flex' flexDir={['column', 'column', 'row']} px={5} alignItems="center" justifyContent={['center', 'center', 'space-between']} mx="auto" maxW={1000} h="80vh">
           <VStack spacing={5} alignItems={['center', 'center', 'flex-start']} maxW={['100%', '100%', '50%']}>
             <Badge px={3} py={2} fontSize="md" color="primary" bg="primaryOpacity" borderRadius={"10px"}>
-              👋 Saudações!
+              👋 GREETINGS!
             </Badge>
             <Text fontSize="43px" fontWeight="bold" textAlign={['center', 'center', 'left']} lineHeight="shorter" color="white">
-              Hi, I’am<br/>Bruno Garcia
+              Hi, I’am<br />Bruno Garcia
             </Text>
             <HStack spacing={2}>
               <IconButton onClick={linkedin} aria-label='linkedin-bruno-willian' variant='link' icon={<FaLinkedin size={35} color="#2666DE80" />} />
@@ -87,37 +86,38 @@ export default function Home() {
               <IconButton onClick={figma} aria-label='figma-bruno-willian' variant='link' icon={<FaFigma size={34} color="#2666DE80" />} />
             </HStack>
           </VStack>
-  
+
           <Box display="flex" maxW={"50%"} mx="auto" alignItems="center" justifyContent="center">
             <Image src="/bruno.png" alt="Bruno Willian Garcia" width={330} height={330} />
           </Box>
-  
+
           <VStack spacing={5} alignItems={['center', 'center', 'flex-end']} maxW={['100%', '100%', '50%']}>
             <Text fontSize="25px" textAlign={['center', 'center', 'right']} lineHeight="shorter" color="grey">
-              Desenvolvedor web,<br/>
-              Desenvolvedor mobile<br/>
-              e UX/UI Designer.
+              Web developer,<br />
+              Mobile developer,<br />
+              and UX/UI designer.
             </Text>
-            <Button bg="primaryOpacity" color='primary' _hover={{bg: 'primaryOpacity'}} _active={{bg: 'primaryOpacityPlus'}}  size='lg' rightIcon={<FaWhatsapp size={20} color="#2666DE" />} onClick={openWhatsapp}>
-              Vamos conversar?
+            <Button bg="primaryOpacity" color='primary' _hover={{ bg: 'primaryOpacity' }} _active={{ bg: 'primaryOpacityPlus' }} size='lg' rightIcon={<FaWhatsapp size={20} color="#2666DE" />} onClick={openWhatsapp}>
+              Let’s talk?
+
             </Button>
-            <Button bg="primaryOpacity" color='primary' _hover={{bg: 'primaryOpacity'}} _active={{bg: 'primaryOpacityPlus'}}  size='lg' rightIcon={<BsDownload size={20} color="#2666DE" />} onClick={donwloadResume}>
-              Baixar CV
+            <Button bg="primaryOpacity" color='primary' _hover={{ bg: 'primaryOpacity' }} _active={{ bg: 'primaryOpacityPlus' }} size='lg' rightIcon={<BsDownload size={20} color="#2666DE" />} onClick={donwloadResume}>
+              Download CV
             </Button>
           </VStack>
         </Box>
       )}
 
       <Center flexDir="column" h="60vh" mx='auto' maxW={1000} mb="120px">
-        <VStack spacing={5}>
+        <VStack spacing={2}>
           <Badge px={3} py={2} fontSize="md" color="primary" bg="primaryOpacity" borderRadius={"10px"}>
-            🧑‍💻 Skills · Experiências
+            🧑‍💻 SKILLS · EXPERIENCES
           </Badge>
           <Text fontSize="43px" textAlign="center" fontWeight="bold" lineHeight="shorter" color="white">
-            Tecnologias e habilidades
+            Technologies and Skills
           </Text>
-          <Text fontSize="20px" lineHeight="shorter" color="gray">
-            Techs que uso no dia a dia
+          <Text pb={4} fontSize="20px" lineHeight="shorter" color="gray">
+            Techs I use on a daily basis.
           </Text>
           <HStack spacing={isMobile ? 3 : 5}>
             <Image src="/stack/react.png" alt="React" width={isMobile ? 40 : 50} height={isMobile ? 40 : 50} />
@@ -136,7 +136,7 @@ export default function Home() {
           </HStack>
         </VStack>
       </Center>
-      
+
       {/* <Box mx='auto' maxW='1000px' mb="120px">
         <SnapList ref={snapList} direction="horizontal">
           <SnapItem margin={{ left: '20vw', right: '10px' }} snapAlign="start">
