@@ -25,8 +25,8 @@ export default function Home() {
 
 
   const openWhatsapp = () => {
-    const phone = '5518996660126'
-    const message = 'Olá, tudo bem? Vi seu portfólio e gostaria de conversar com você.'
+    const phone = '353830169597'
+    const message = 'Hello everything is fine? I saw your portfolio and would like to talk to you.'
     window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${message}`, '_blank')
   }
 
